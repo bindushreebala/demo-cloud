@@ -16,11 +16,18 @@ public class SeedlerServiceImpl implements SeedlerService {
 
     private SeedlerRepository repository;
 
-    public SeedlerServiceImpl(SeedlerRepository repository) {
-        this.repository = repository;
-        this.repository.saveAll(SeedlerService.defaultSeedlers());
-    }
+//    public SeedlerServiceImpl(SeedlerRepository repository) {
+//        this.repository = repository;
+//        this.repository.saveAll(SeedlerService.defaultSeedlers());
+//    }
 
-    public SeedlerServiceImpl() {};
+    public SeedlerServiceImpl() {
+        this.repository.saveAll(SeedlerService.defaultSeedlers());
+    };
+
+    @Override
+    public List<Seedler> getSeedlings() {
+        return (List<Seedler>)this.repository.findAll();
+    }
 
 }

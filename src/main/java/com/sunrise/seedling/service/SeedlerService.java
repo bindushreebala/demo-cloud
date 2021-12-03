@@ -10,6 +10,8 @@ import java.util.List;
 
 public interface SeedlerService {
 
+    List<Seedler> getSeedlings();
+
     static List<Seedler> defaultSeedlers() {
         ArrayList<Seedler> seedlers = new ArrayList<>();
 
