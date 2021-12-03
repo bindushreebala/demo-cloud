@@ -2,18 +2,31 @@ package com.sunrise.seedling.model;
 
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 public class Seedler {
 
     private Long id;
+
+    @NotNull(message = "Name should not be null")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "Name must be a string")
     private String name;
-    private String role;
-    private String group;
-    private String team;
+
+    @NotNull(message = "Role should be specified")
+    private Role role;
+
+    @NotNull(message = "Specify your group")
+    private Group group;
+
+    @NotNull(message = "Team should be specified")
+    private Team team;
+
+    @NotNull(message = "Location should not be empty")
     private String location;
     private String bio;
 
-
-    public Seedler(Long id, String name, String role, String group, String team, String location, String bio) {
+    public Seedler(Long id, String name, Role role, Group group, Team team, String location, String bio) {
         this.id = id;
         this.name = name;
         this.role = role;
@@ -40,15 +53,15 @@ public class Seedler {
         this.name = name;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
-    public void setGroup(String group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 
-    public void setTeam(String team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 
@@ -60,15 +73,15 @@ public class Seedler {
         this.bio = bio;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public String getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public String getTeam() {
+    public Team getTeam() {
         return team;
     }
 
