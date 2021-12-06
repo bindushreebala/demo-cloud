@@ -34,13 +34,12 @@ public class SeedlerServiceImpl implements SeedlerService {
 
     @PostConstruct
     @Override
-    public void addDefaultSeedlers() {
-        repository.saveAll(defaultSeedlers());
+    public void addDefaultSeedlers(){
     }
 
     @Override
     public List<Seedler> getSeedlings() {
-        return (List<Seedler>)this.repository.findAll();
+        return repository.getAllSeedlers();
     }
 
 }
