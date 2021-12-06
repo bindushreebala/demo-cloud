@@ -12,15 +12,15 @@ import java.util.List;
 @SpringBootTest
 class SeedlingApplicationTests {
 
-    @Test
-    void testDefaultSeedlers_SeedlerDetails()
-    {
-        SeedlerServiceImpl seedlerService = new SeedlerServiceImpl();
-        List<Seedler> seedlers = seedlerService.defaultSeedlers();
-
-        Assertions.assertNotNull(seedlers);
-        Assertions.assertTrue(seedlers.size() > 0);
-
-    }
+//    @Test
+//    void testDefaultSeedlers_SeedlerDetails()
+//    {
+//        SeedlerServiceImpl seedlerService = new SeedlerServiceImpl();
+//        List<Seedler> seedlers = seedlerService.defaultSeedlers();
+//
+//        Assertions.assertNotNull(seedlers);
+//        Assertions.assertTrue(seedlers.size() > 0);
+//
+//    }
 
 }
