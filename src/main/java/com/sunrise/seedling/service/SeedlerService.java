@@ -10,7 +10,6 @@ import java.util.List;
 
 public interface SeedlerService {
 
-    void addDefaultSeedlers();
     List<Seedler> getSeedlings();
 
 }
