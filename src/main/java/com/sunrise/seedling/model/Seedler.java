@@ -1,13 +1,12 @@
 package com.sunrise.seedling.model;
 
-import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class Seedler {
 
-    private Long id;
+    private Integer id;
 
     @NotNull(message = "Name should not be null")
     @Pattern(regexp = "^[a-zA-Z ]+$", message = "Name must be a string")
@@ -26,7 +25,7 @@ public class Seedler {
     private String location;
     private String bio;
 
-    public Seedler(Long id, String name, Role role, Group group, Team team, String location, String bio) {
+    public Seedler(Integer id, String name, Role role, Group group, Team team, String location, String bio) {
         this.id = id;
         this.name = name;
         this.role = role;
@@ -36,8 +35,7 @@ public class Seedler {
         this.bio = bio;
     }
 
-    @Id
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -45,7 +43,7 @@ public class Seedler {
         return name;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

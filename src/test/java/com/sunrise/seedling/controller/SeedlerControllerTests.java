@@ -35,10 +35,8 @@ public class SeedlerControllerTests {
 
     @Test
     public void testSeedlerController_getSeedlings() throws Exception {
-        List<Seedler> seedlers = Collections.singletonList(new Seedler(1L, "Lido Mazzucco",
+        List<Seedler> seedlers = Collections.singletonList(new Seedler(1, "Lido Mazzucco",
                 Role.BACKEND_DEVELOPER,Group.PLATFORM, Team.PUZZLES, "Berlin", "Hi, I'm Lido."));
-        //Seedler seedler1 = new Seedler(1L, "Lido Mazzucco", Role.BACKEND_DEVELOPER, Group.PLATFORM, Team.PUZZLES, "Berlin", "Hi, I'm Lido.");
-        //seedlers.add(seedler1);
         Mockito.when(seedlerService.getSeedlings()).thenReturn(seedlers);
         mockMvc.perform(MockMvcRequestBuilders.get("/seedlings"))
                 .andExpect(status().isOk())
