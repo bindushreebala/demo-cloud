@@ -1,6 +1,6 @@
 use seedler;
 
-CREATE TABLE seedler_info (
+CREATE TABLE IF NOT EXISTS seedler_info (
         id int,
         name VARCHAR(50) NOT NULL,
         role ENUM('DEVOPS_ENGINEER', 'FRONTEND_DEVELOPER', 'BACKEND_DEVELOPER', 'UI_UX_DESIGNER', 'DATA_ENGINEER') NOT NULL,
