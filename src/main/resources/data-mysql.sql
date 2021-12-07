@@ -1,3 +1,5 @@
+use seedler;
+
 CREATE TABLE seedler_info (
         id int,
         name VARCHAR(50) NOT NULL,

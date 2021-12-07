@@ -1,9 +1,23 @@
-networks:
-  seedler-mysql-network:
+version: "3.7"
+
 
 services:
+  mysqldb:
+    platform: linux/amd64
+    image: mysql:8
+    networks:
+      - seedler-mysql-network
+    environment:
+      - MYSQL_DATABASE=seedler
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+
+
   seedler-spring:
     image: seedler-spring
+    build: .
+    restart: on-failure
     ports:
       - "9099:9099"
     networks:
@@ -12,11 +26,9 @@ services:
       - mysqldb
 
 
-  mysqldb:
-    image: mysql:8
-    networks:
-      - seedler-mysql-network
-    environment:
-      - MYSQL_DATABASE=seedler
-      - MYSQL_ROOT_PASSWORD=root
+networks:
+  seedler-mysql-network:
+
+
+
 
