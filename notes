@@ -1,0 +1,24 @@
+2021.12.06
+
+
+	today step
+		- install MySql
+		- add dependencies in build.gradle file
+		- connect db trough application.properties
+
+		- docker
+			create network
+
+
+				docker network create seedler_mysql
+
+				docker container run --name mysqldb --network seedler_mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=seedler -d mysql:8
+
+				mysql -u root -p
+
+				docker image build -t seedler-spring .
+
+				docker container run --network seedler_mysql --name seedler-spring-container -p 9099:9099 -d seedler-spring
+
+				with compose
+				docker-compose up

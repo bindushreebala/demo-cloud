@@ -1,0 +1,22 @@
+networks:
+  seedler-mysql-network:
+
+services:
+  seedler-spring:
+    image: seedler-spring
+    ports:
+      - "9099:9099"
+    networks:
+      - seedler-mysql-network
+    depends_on:
+      - mysqldb
+
+
+  mysqldb:
+    image: mysql:8
+    networks:
+      - seedler-mysql-network
+    environment:
+      - MYSQL_DATABASE=seedler
+      - MYSQL_ROOT_PASSWORD=root
+
